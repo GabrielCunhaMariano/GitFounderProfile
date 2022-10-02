@@ -37,13 +37,31 @@ const searchResult = document.querySelector(".search-result");
 
   const BlogPeople = document.querySelector(".git-user");
   BlogPeople.textContent = response.html_url;
+  BlogPeople.setAttribute("href", response.html_url);
+
+  const BlogPeopleComplemente = document.querySelector(".git-user-complemente");
+  BlogPeopleComplemente.setAttribute("href", response.html_url);
 
   const linkedinUser = document.querySelector(".likedin-user");
   linkedinUser.textContent = response.blog;
 
+  const LinkedinPeopleComplemente = document.querySelector(
+    ".linkedin-user-complemente"
+  );
+  LinkedinPeopleComplemente.setAttribute("href", response.blog);
+
   const userPhoto = document.querySelector(".user-photo");
   userPhoto.setAttribute("src", response.avatar_url);
   userPhoto.setAttribute("class", "img-wrapper");
+
+  //function addStyle() {
+  //const sheet = new CSSStyleSheet();
+  //sheet.insertRule(`. {
+  // background: pink;
+  //text-transform: uppercase;
+  // }`);
+  // document.adoptedStyleSheets = [sheet];
+  //}
 
   //const img = document.createElement("img");
   //document.body.appendChild(img);
